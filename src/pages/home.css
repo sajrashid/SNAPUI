@@ -1,0 +1,31 @@
+﻿.dashboards>div{
+background-color: #efefef;
+margin: 2%;
+max-width: 45%;
+float: left;
+color:#555;
+}
+.dashboards>div:first-of-type{
+    background-color:rgb(3, 3, 3);
+}
+.dashboards>div>div{
+   margin: 1em;
+   background-color: #fff;
+   padding: 1em;
+   min-height: 9em;
+   font: italic normal 14px/1.2 arial;
+}
+.dashboards>div>div>img{
+    max-width:45%;
+    margin-right: 1em;
+}
+
+.linkList>div  {
+padding: 0.5em!important;
+}
+
+
+  .middle{
+    vertical-align: middle; 
+  }
+  

@@ -1,0 +1,58 @@
+﻿.headerwrap {
+    display: inline-block;
+    width: 100%;
+    box-shadow: 0px 0px 2px 2px #dcddde;
+}
+.menuWrap{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:2em;
+    position:relative;
+}
+.row{
+    width:100%;
+margin: 0.5em;
+}
+.logo{
+    position: relative;
+    top:-0.4em;
+    margin-left: 0.5em;
+    font: normal bold normal 30px/3 impact;
+}
+
+.logo::after { 
+    position: relative;
+    content: "API Tools & Analytics";
+    font: italic bold normal 10px/0.6 arial;
+    color: #999;
+    top:1.4em;
+    left:-6.2em;
+
+  }
+
+.logo>img {
+    position: relative;
+  width:2.5em;
+  top:0.1em;
+  right:-0.03em;
+}
+.login{
+    position:absolute;
+    text-align:center;
+    top:1.2em;
+    right:1em;
+}
+    .login i {
+        font-size: 3em;
+    }
+    .login a {
+        position: absolute;
+        top: 0;
+        right:0.1em;
+        line-height:4.5em;
+    }
+.isLoggedin {
+    margin-top:-1em;
+    text-decoration:underline;
+}

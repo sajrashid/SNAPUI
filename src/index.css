@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+a { color:#333;}
+
+@media all and (min-width:0px) and (max-width:900px) {
+  html,body {
+    font-size: 12px;
+  }
+}
+@media all and (min-width:901px) and (max-width:1440px) {
+  html,body {
+    font-size: 13px;
+  }
+}
+@media all and (min-width:1441px) and (max-width:2048px) {
+  html,body {
+    font-size: 14px;
+  }
+}
+@media all and (min-width:2049px) and (max-width:4094px) {
+  html,body {
+    font-size: 15px;
+  }
+}
+@media all and (min-width:4094px) and (max-width:8196px) {
+  html,body {
+    font-size: 18px;
+  }
+}

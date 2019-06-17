@@ -329,5 +329,7 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 
-# dont checkin node .bin folders
+# dont checkin node .bin & cache folders
 .bin/
+node_modules/.bin/
+node_modules/.cache/

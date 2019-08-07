@@ -26,7 +26,6 @@ export default class SRow extends Component {
         this.props.handleRowStateChange(rowId)
     }
 
-
     CreateRows = () => {
       let items = this.props.json
       let options = this.props.options
@@ -34,8 +33,7 @@ export default class SRow extends Component {
   
       return items.map((row, index) => {
         return <tr onClick={this.RowClick}    key={index} ><SCell  data={row} keys={keys} options={options} /></tr>
-    
-    })
+      })
     }
   
     render() {

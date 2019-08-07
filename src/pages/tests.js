@@ -1,7 +1,7 @@
 ﻿import React from 'react'
 import { Tab} from 'semantic-ui-react'
-import DataTable from '../component/Table'
-import DTable from '../component/D-Table'
+import SuperTable from '../component/Supertable/STable'
+
 
 
 
@@ -60,11 +60,9 @@ const mainPanes = [
             menuItem: 'SNow API', render: () =>
                 <Tab.Pane attached={false}>
                 Mule-Soft API Tests
-                <DataTable tableData={json} color='red'inverted={false} />
-                <DTable  data={this.state.tData}/>
-
-      
-               
+            
+                <SuperTable json={json} />
+                <SuperTable json={this.state.tData} />
                 </Tab.Pane>
         },
         {

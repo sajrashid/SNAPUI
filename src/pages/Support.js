@@ -1,6 +1,6 @@
 ﻿import React, { Component } from 'react'
-import DataTable from '../component/Table'
 import { Tab} from 'semantic-ui-react'
+import SuperTable from '../component/Supertable/STable'
 
 const json = [
     { name: 'John', age: 15, gender: 'Male' },
@@ -31,7 +31,7 @@ export default class Support extends Component {
         return (
                      <div>
                           <Tab menu={{ pointing: true }} panes={panes} />
-                          <DataTable tableData={json} color='red'inverted={false} />
+                          <SuperTable json={json} />
                      </div >
                 )
     }

@@ -1,0 +1,15 @@
+.editor {
+    font-size: 1.5em;
+}
+.editor > .row >  div{
+ width:49%;
+ float: left;
+}
+.editorRow{
+  
+}
+.editorRowC{
+    background-color: azure;
+    padding:0.5em;
+    margin-bottom: 0.5em;
+}

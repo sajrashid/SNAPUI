@@ -331,4 +331,4 @@ ASALocalRun/
 
 # dont checkin node  cache folders
 
-node_modules/.cache/
+node_modules/

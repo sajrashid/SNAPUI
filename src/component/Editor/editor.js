@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _ from 'lodash'
-import './editor.css';
-
+import './editor.css'
+import shortid from 'shortid'
 //componenet
 export default class Editor extends Component {
 
@@ -22,6 +22,7 @@ handleUpdateClick = (value) => {
     alert(value)
  }
  onChange = (e) => {
+
     let arrIndex=this.props.id -1
     let row = this.state.json[arrIndex];
    // this.setState({json:json[arrIndex]})
@@ -37,35 +38,35 @@ handleUpdateClick = (value) => {
       let hiddenColArr = self.state.options.hideCol || []
       // loops throgh hiddenCol array and returns a bool
       let isHidden =  _.includes(hiddenColArr, key) 
+
+     // build values
+     let arrIndex=this.props.id -1
+     let row = this.state.json[arrIndex];
+
+     return Object.keys(row).map((key2)  =>
+
+     <div key={shortid.generate()} className='row'   >{key}
     
-        return <div key={key}  >{key}</div>
+        <input  onChange={this.onChange} key={shortid.generate()} type="text" value={row[key2]} />
+
+     </div>
+
+     )
+       
     })
  }
  buildValues = () => {
      let arrIndex=this.props.id -1
-    let row = this.state.json[arrIndex];
-
-    return Object.keys(row).map((key)  =>
-    <div>
-     <input onchange={this.onChange} key={key +this.props.id } type="text" value={row[key]} />
-
-    </div>
-
-     )
-         
+     let row = this.state.json[arrIndex];
    
  }
 
  render() {
     return (
-    <div className='editor'>
-        <div className='row editorRow'>
-             <div className='editorRowC'>
-             {this.buildKeys()}
-             </div>
-            <div className='editorRowC'>
+    <div key={shortid.generate()} className='editor ui  grid'>
+        <div key={shortid.generate()} className='editorRow'>
+            {this.buildKeys()}
             {this.buildValues()}
-            </div>
         </div>
     </div>
     

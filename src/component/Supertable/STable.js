@@ -3,7 +3,7 @@ import './stable.css'
 import _ from 'lodash'
 import SRow from './SRow'
 import SuperEditor from '../Editor/editor'
-
+import shortid from 'shortid'
 //componenet
 export default class SuperTable extends Component {
   // ********************************************************************
@@ -70,7 +70,7 @@ export default class SuperTable extends Component {
         }
     
         return (
-        <div>
+        <div key={shortid.generate()}>
                 <table className={'ui ' + this.state.options.styles + ' table'}  >
                     <thead>
                         <tr>{this.createHeader()}</tr>
@@ -83,8 +83,8 @@ export default class SuperTable extends Component {
                             <a  onClick={this.closeEditor} >cancel</a>
                         </div>
                     </div>
-                <div style={{display : this.state.isEditorVisible}} >
-                    <SuperEditor json={this.state.json} options={this.state.options} id={this.state.selectedRowId} />
+                <div key={shortid.generate()} style={{display : this.state.isEditorVisible}} >
+                    <SuperEditor key={shortid.generate()} json={this.state.json} options={this.state.options} id={this.state.selectedRowId} />
                 </div>
 
         </div>

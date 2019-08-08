@@ -23,7 +23,7 @@ export default class Home extends React.Component {
                 { 'ApiId': 7, 'Name': 'Poeple',  'Author':'SM',  'Status': 'green', 'Desc': 'Some Data', 'DevStatus': 'Pre-Prod', 'CodeCoverage': '80%', 'Testing': true, 'IntTest': true }
             ],
             options: { 
-                editable:false,
+                editable:true,
                 hideCol: ['DevStatus'] , 
                 infoCol:['Desc'], 
                 footer :true, 

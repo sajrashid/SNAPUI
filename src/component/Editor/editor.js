@@ -7,69 +7,72 @@ export default class Editor extends Component {
 
 
 
-constructor(props) {
+  constructor(props) {
     super(props);
     this.state = {
       sortDirection: true,
       json: props.json, // using a prop called json. were setting state.data to json
       options: props.options || {}, //optional object options
-      id:props.id,
+      id: props.id,
     }
   }
   //thandleStateChange is pased to child component
   //  in footer if options.editable is set to true
-handleUpdateClick = (value) => {
+  handleUpdateClick = (value) => {
     alert(value)
- }
- onChange = (e) => {
+  }
+  onChange = (e) => {
 
-    let arrIndex=this.props.id -1
+    let arrIndex = this.props.id - 1
     let row = this.state.json[arrIndex];
-   // this.setState({json:json[arrIndex]})
-   // this.setState({ selectedRowId: Id})
- }
+    // this.setState({json:json[arrIndex]})
+    // this.setState({ selectedRowId: Id})
+  }
 
- buildKeys = () => {
-    let keys = Object.keys(this.state.json[0]);
-    let self = this
-    return keys.map((key, index) => {
-      // hide column if columname in hidden columns array
-      /// if no hidecol option we set it an empty array
-      let hiddenColArr = self.state.options.hideCol || []
-      // loops throgh hiddenCol array and returns a bool
-      let isHidden =  _.includes(hiddenColArr, key) 
+  createEditor = () => {
+    // hide column if columname in hidden columns array
+    /// if no hidecol option we set it an empty array
+    // loops throgh hiddenCol array and returns a bool
 
-     // build values
-     let arrIndex=this.props.id -1
-     let row = this.state.json[arrIndex];
+    // build values
+    let arrIndex = this.props.id - 1
+    let row = this.state.json[arrIndex];
 
-     return Object.keys(row).map((key2)  =>
+    return Object.keys(row).map((key, index) =>
 
-     <div key={shortid.generate()} className='row'   >{key}
-    
-        <input  onChange={this.onChange} key={shortid.generate()} type="text" value={row[key2]} />
 
-     </div>
-
-     )
-       
-    })
- }
- buildValues = () => {
-     let arrIndex=this.props.id -1
-     let row = this.state.json[arrIndex];
-   
- }
-
- render() {
-    return (
-    <div key={shortid.generate()} className='editor ui  grid'>
-        <div key={shortid.generate()} className='editorRow'>
-            {this.buildKeys()}
-            {this.buildValues()}
+      <div class="row">
+        <div class="column leftCol">
+          <p  key={key + index}>{key}</p>
         </div>
-    </div>
-    
+        <div class="column rightCol">
+          <input onChange={this.onChange} key={shortid.generate()} type="text" value={row[key]} />
+        </div>
+      </div>
+
+
     )
- }
+
+
+  }
+
+
+  render() {
+    return (
+
+      <div className='editor ui divided two column grid' key={shortid.generate()} >
+        <div className='editorcaption' ><p><b>Update</b></p></div>
+        {this.createEditor()}
+        <div className='editorfooter'>
+          <div className="footerBtnDiv ui buttons">
+            <button className="ui button">Cancel</button>
+            <div className="or"></div>
+            <button className="ui positive button">Save</button>
+          </div>
+        </div>
+      </div>
+
+
+    )
+  }
 }

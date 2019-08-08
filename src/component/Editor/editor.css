@@ -1,15 +1,40 @@
 .editor {
-    font-size: 1.5em;
+    background-color: #eee;
+    font-size: 1.2em;
+margin:0!important;
 }
-.editor > .row >  div{
- width:49%;
- float: left;
+
+.editor .row {
+    padding:0.5em!important;
+   margin:0!important;
 }
-.editorRow{
-  
+.editorcaption{
+    background-color: #dcdcdc;
+    text-align: center;
+    padding: 0.5em;
+    width:100%;
 }
-.editorRowC{
-    background-color: azure;
+.editorcaption p {
+    text-align: center;
+}
+.leftCol{
+    background-color: #ccc;
     padding:0.5em;
-    margin-bottom: 0.5em;
+}
+.rightCol {
+   width:100%;
+}
+.rightCol > * {
+    padding:0.5em;
+    width:100%;
+}
+
+.editorfooter {
+    background-color: #cdcdcd;
+    padding: 0.3em;
+    width:100%;
+    padding-right: 3em;
+}
+ .footerBtnDiv{
+    float: right;
 }

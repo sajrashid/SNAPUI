@@ -80,7 +80,6 @@ export default class SuperTable extends Component {
                     <div style={{display : isFooterVisible}} className='footer'>footer
                         <div style={{display : isEditorElementsVisible}}>
                             <a  onClick={this.showEditor} >Edit</a>
-                            <a  onClick={this.closeEditor} >cancel</a>
                         </div>
                     </div>
                 <div key={shortid.generate()} style={{display : this.state.isEditorVisible}} >
@@ -90,6 +89,11 @@ export default class SuperTable extends Component {
         </div>
         )
     }
+
+}
+
+class TableFooter extends Component {
+
 
 }
 

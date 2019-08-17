@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './component/Header/header';
-import Footer from './component/Footer/footer';
+import Footer from './component/PageFooter/footer';
 import { Switch, Route } from 'react-router-dom'
 import Home from './pages/home'
 import Tests from './pages/tests'

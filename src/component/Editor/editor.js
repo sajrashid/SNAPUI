@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import _ from 'lodash'
 import './editor.css'
 import shortid from 'shortid'
+import { Button } from 'semantic-ui-react'
+
 //componenet
 export default class Editor extends Component {
 
@@ -21,10 +23,18 @@ export default class Editor extends Component {
   handleUpdateClick = (value) => {
     alert(value)
   }
-  onChange = (e) => {
-
+  onChange = (evt) => {
+    let el =evt.currentTarget
     let arrIndex = this.props.id - 1
-    let row = this.state.json[arrIndex];
+    let json=this.state.json
+    let selectedItemPropName=el.value
+  
+    json[arrIndex][selectedItemPropName]=el.value
+
+    this.setState({json:json})
+
+
+
     // this.setState({json:json[arrIndex]})
     // this.setState({ selectedRowId: Id})
   }
@@ -41,12 +51,12 @@ export default class Editor extends Component {
     return Object.keys(row).map((key, index) =>
 
 
-      <div class="row">
-        <div class="column leftCol">
-          <p  key={key + index}>{key}</p>
+      <div key={key + index + row} class="row">
+        <div key={key + index + 'left' + row}  class="column leftCol">
+          <p key={key + index}>{key}</p>
         </div>
-        <div class="column rightCol">
-          <input onChange={this.onChange} key={shortid.generate()} type="text" value={row[key]} />
+        <div key={key + index + 'left' + row} class="column rightCol">
+          <input onChange={this.onChange} key={key + index + 'inp'} type="text" value={row[key]} />
         </div>
       </div>
 
@@ -60,15 +70,15 @@ export default class Editor extends Component {
   render() {
     return (
 
-      <div className='editor ui divided two column grid' key={shortid.generate()} >
+      <div className='editor ui divided two column grid' >
         <div className='editorcaption' ><p><b>Update</b></p></div>
         {this.createEditor()}
         <div className='editorfooter'>
-          <div className="footerBtnDiv ui buttons">
-            <button className="ui button">Cancel</button>
-            <div className="or"></div>
-            <button className="ui positive button">Save</button>
-          </div>
+          <Button.Group footerBtnDiv>
+            <Button>Cancel</Button>
+            <Button.Or />
+            <Button positive>Save</Button>
+          </Button.Group>
         </div>
       </div>
 

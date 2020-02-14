@@ -19,7 +19,7 @@
     "semantic-ui-react": "^0.81.3",
     "shards-react": "^1.0.3",
     "shortid": "^2.2.14",
-    "yarn": "^1.16.0"
+    "yarn": "^1.22.0"
   },
   "scripts": {
     "start": "react-scripts start",
